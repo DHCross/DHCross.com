@@ -160,6 +160,13 @@ body::before {
   line-height: 1;
 }
 
+.card-icon-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: inline-block;
+}
+
 .card-title {
   font-family: var(--font-heading);
   font-size: 1.4rem;
