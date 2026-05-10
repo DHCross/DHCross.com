@@ -196,6 +196,16 @@ body::before {
   line-height: 1.5;
 }
 
+.featured-list a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.featured-list a:hover {
+  color: var(--accent-color);
+}
+
 .featured-list strong {
   color: var(--text-primary);
   font-family: var(--font-mono);
