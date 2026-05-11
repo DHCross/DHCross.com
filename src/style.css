@@ -609,6 +609,183 @@ img { display: block; max-width: 100%; }
   font-size: 0.6rem;
 }
 
+/* ─── 10.5 CONTACT SECTION ───────────────────── */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-intro {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.contact-details {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-details li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-detail-icon {
+  font-size: 1rem;
+  color: var(--gold-dark);
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.contact-detail-link {
+  font-size: 0.9rem;
+  color: var(--steel);
+  transition: color var(--t-fast);
+}
+
+.contact-detail-link:hover {
+  color: var(--gold-light);
+}
+
+.contact-detail-text {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+}
+
+/* ─── CONTACT FORM ──────────────────────────── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--card-radius);
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle top stripe */
+.contact-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--cat-violet), var(--cat-steel));
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+  opacity: 0.7;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.form-input {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-dim);
+  border-radius: 8px;
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast), background var(--t-fast);
+}
+
+.form-input::placeholder {
+  color: var(--text-dim);
+  font-weight: 300;
+}
+
+.form-input:focus {
+  border-color: var(--gold-dark);
+  box-shadow: 0 0 0 3px var(--gold-glow), 0 0 20px -6px rgba(201, 168, 76, 0.1);
+  background: var(--bg-accent);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+.form-submit {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg-primary);
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  border: none;
+  border-radius: 8px;
+  padding: 14px 28px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform var(--t-fast), box-shadow var(--t-fast), filter var(--t-fast);
+  align-self: flex-start;
+  font-weight: 600;
+}
+
+.form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -8px rgba(201, 168, 76, 0.35);
+  filter: brightness(1.08);
+}
+
+.form-submit:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px -4px rgba(201, 168, 76, 0.3);
+}
+
+.submit-icon {
+  display: inline-block;
+  transition: transform var(--t-fast);
+}
+
+.form-submit:hover .submit-icon {
+  transform: translate(2px, -2px);
+}
+
+.form-note {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
 /* ─── 11. ANIMATIONS ─────────────────────────── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
@@ -625,6 +802,10 @@ img { display: block; max-width: 100%; }
 
 .site-footer {
   animation: fadeUp 1s var(--ease) 0.3s both;
+}
+
+.contact-section {
+  animation: fadeUp 1s var(--ease) 0.22s both;
 }
 
 /* ─── 12. RESPONSIVE — 900px ────────────────── */
@@ -646,6 +827,10 @@ img { display: block; max-width: 100%; }
 
   .footer-grid > .footer-col:first-child {
     grid-column: span 2;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -689,5 +874,9 @@ img { display: block; max-width: 100%; }
 
   .header-nav {
     gap: 4px;
+  }
+
+  .contact-form {
+    padding: 24px 20px;
   }
 }
