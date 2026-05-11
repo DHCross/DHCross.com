@@ -196,14 +196,47 @@ body::before {
   line-height: 1.5;
 }
 
+/* Active (linked) items */
 .featured-list a {
-  color: var(--text-primary);
-  text-decoration: none;
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-decoration-color: rgba(164, 178, 198, 0.35);
+  text-underline-offset: 3px;
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .featured-list a:hover {
-  color: var(--accent-color);
+  color: var(--text-primary);
+  text-decoration-color: var(--accent-color);
+}
+
+.featured-list a strong {
+  color: inherit;
+}
+
+/* Inactive (no link) items — dimmed, not clickable */
+.featured-list li.inactive {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.featured-list li.inactive strong {
+  color: var(--text-dim);
+}
+
+/* Internal tool tag */
+.tag-internal {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  background-color: var(--bg-accent);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  padding: 1px 5px;
+  margin-left: 6px;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
 }
 
 .featured-list strong {
