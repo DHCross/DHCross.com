@@ -517,6 +517,18 @@ img { display: block; max-width: 100%; }
   transform: translate(3px, -3px);
 }
 
+.card-link-inactive {
+  color: var(--text-dim);
+  border-bottom-color: var(--border-dim);
+  cursor: default;
+  opacity: 0.55;
+}
+
+.card-link-inactive:hover {
+  color: var(--text-dim);
+  border-bottom-color: var(--border-dim);
+}
+
 /* ─── 10. FOOTER ─────────────────────────────── */
 .site-footer {
   border-top: 1px solid var(--border-dim);
